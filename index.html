@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8"> 
+    <title>中华饮食文化</title>
+	<link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    
+  
+<title>登录与注册</title>  
+<style>  
+    .form-container {  
+        display: flex;  
+        justify-content: space-around; /* 让表单水平居中，或者根据你的需求调整 */  
+    }  
+    form {  
+        flex: 1; /* 允许表单在容器中伸缩 */  
+        margin: 10px; /* 添加一些外边距，使表单更清晰 */  
+		display: flex;
+  		flex-direction: column;
+  		align-items: flex-start; /* 使所有表单元素左对齐 */
+    }  
+</style>  
+    
+<title>Image Scroller</title>  
+ <style> .form-container { display: flex; justify-content: space-between; } .form-container form { flex: 1; margin: 0 10px; } /* 您可以根据需要添加更多样式 */ </style> 
+<style>  
+.banner {    
+    position: relative;    
+    width: 100%;    
+    height: 200px;    
+    overflow: hidden;    
+}    
+  
+.scrolling-images-container {    
+    position: absolute;    
+    width: 100%;    
+    height: 100%; /* 修改高度为100%以填充整个.banner */  
+    display: flex;    
+    align-items: center;    
+    justify-content: flex-end; /* 从右侧开始显示图片 */  
+}    
+  
+.scrolling-image {    
+    position: relative; /* 改为relative或static，因为我们使用flex布局 */  
+    width: 150%; /* 假设图片宽度与容器相同 */  
+    height: 100%; /* 假设图片高度与容器相同 */  
+    background-size: cover; /* 确保图片覆盖整个容器 */  
+    opacity: 0;    
+    animation: scrollAndFade 10s infinite; /* 合并滚动和淡入淡出动画 */  
+    will-change: transform, opacity; /* 提示浏览器此元素将更改transform和opacity */    
+}    
+  
+.scrolling-image:nth-child(1) {    
+    animation-delay: 0s;    
+}    
+  
+.scrolling-image:nth-child(2) {    
+    animation-delay: 1s; /* 延迟开始以错开两个动画 */  
+}    
+  
+/* 定义滚动和淡入淡出动画 */    
+@keyframes scrollAndFade {    
+    0% {  
+        transform: translateX(100%); /* 从右侧开始 */  
+        opacity: 0;  
+    }  
+    10% {  
+        opacity: 1; /* 图片开始显示 */  
+    }  
+    50% {  
+        transform: translateX(-10%); /* 移动到左侧一点，但不完全离开 */  
+        opacity: 1;  
+    }  
+    60% {  
+        opacity: 0; /* 图片开始淡出 */  
+    }  
+    100% {  
+        transform: translateX(-100%); /* 完全移动到左侧并隐藏 */  
+        opacity: 0;  
+    }  
+}  
+  
+/* 不再需要fadeImage和fadeImageFirst动画，因为我们使用了一个合并的动画 */
+</style>  
+
+</head>
+<body>
+    <div class="header">
+        <div class="top">
+            <img src="images/logo.png" class="logo">
+            <div class="link">
+                <a href="#">设为首页</a> | <a href="#" class="link2">加入收藏</a>
+            </div>
+        </div>
+        
+        
+        <div class="form-container"> 
+        <!-- 登录表单 -->
+         
+          
+         <form id="loginForm" action="javascript:void(0);" method="post" onsubmit="loginRedirect(); return false;">  
+    <!-- 表单内容 -->   <h2>登录</h2> <label for="username">账号:</label> <input type="text" id="username" name="username" required><br> <label for="password">密码:</label> <input type="password" id="password" name="password" required><br> 
+    <input type="submit" value="登录">  
+</form>  
+  
+<script>  
+function loginRedirect() {  
+    // 注意：这通常不会工作，因为出于安全原因，浏览器不允许通过 JavaScript 打开 file:/// 链接  
+    window.location.href = 'file:///D:/html大作业/t5.中华饮食文化5页/t5.中华饮食文化5页/index.html';  
+}  
+</script>
+          
+        <!-- 注册表单 -->  
+<form id="registrationForm" onsubmit="registerRedirect(); return false;" method="post">    
+     <h2>注册</h2> <label for="registerUsername">手机号:</label> <input type="text" id="registerUsername" name="registerUsername" required><br> <label for="registerPassword">密码:</label> <input type="password" id="registerPassword" name="registerPassword" required><br> <label for="confirmPassword">再次确认密码:</label> <input type="password" id="confirmPassword" name="confirmPassword" required><br> <input type="submit" value="注册"></form>  
+  
+<script>  
+function registerRedirect() {  
+    // 跳转到指定的本地HTML文件  
+    // 请注意，这可能会受到浏览器的安全限制  
+    window.location.href = 'file:///D:/html%E5%A4%A7%E4%BD%9C%E4%B8%9A/t5.%E4%B8%AD%E5%8D%8E%E9%A5%AE%E9%A3%9F%E6%96%87%E5%8C%965%E9%A1%B5/t5.%E4%B8%AD%E5%8D%8E%E9%A5%AE%E9%A3%9F%E6%96%87%E5%8C%965%E9%A1%B5/Untitled-1.html';  
+}  
+</script>
+</div>
+        
+        <div class="nav">
+            <ul>
+              <li><a href="index.html">网站首页</a></li>
+              <li><a href="page1.html">食材产地</a></li>
+              <li><a href="page2.html">中华菜系</a></li>
+              <li><a href="page3.html">节日习俗</a></li>
+              <li><a href="page4.html">在线留言</a></li>
+            </ul>
+        </div>
+  
+   <div class="banner">  
+    <div class="scrolling-images-container">  
+        <img src="images/banner.png" class="scrolling-image" alt="Local Banner">  
+        <img src="images/db17850383f63a0d5699a368f9cabbc.png" class="scrolling-image" alt="External Banner">  
+    </div>  
+</div>
+    <div class="content">
+        <div class="sidebar">
+            <div class="pro_box">
+                <img src="images/pro_cp.jpg"/>
+                <ul>
+                  <li><a href="page1.html">食材产地</a></li>
+                  <li><a href="page2.html">中华菜系</a></li>
+                  <li><a href="page3.html">节日习俗</a></li>
+                  <li><a href="page4.html">在线留言</a></li>
+                </ul>
+            </div>
+            <div class="contact_box">
+                <div class="text">
+                  <p>联系人：xxx</p>
+                  <p>电话：000-0000-0000</p>
+                </div>
+            </div>
+        </div>
+        <div class="cont_right">
+            <div class="pic_show">
+                <div class="title">
+                  <h3>美食展示</h3>
+                </div>            
+                <ul>
+                    <li><a href="#"><img src="images/show1.jpg" />美食展示</a></li>
+                    <li><a href="#"><img src="images/show2.jpg" />美食展示</a></li>
+                    <li><a href="#"><img src="images/show3.jpg" />美食展示</a></li>
+                    <li><a href="#"><img src="images/show4.jpg" />美食展示</a></li>
+                </ul>
+            </div>
+			<div class="jianjie">
+                <div class="title">
+                	<h3>美食文化简介</h3>
+                </div>
+                <div class="box">
+                	<img src="images/jianjie.jpg">
+                    <p>
+                    	民以食为天，世界上任何一个国家都有一个传统的饮食文明与其它文明共同在历史中轮回。每个地区都有与众不同的饮食习惯和味觉倾向，而各自将这些精妙的技艺发展成了一种习俗，
+                        一种文化，这使得无数食客流连在世界的每一个角落。
+                    </p>
+                    <p>
+                    	亚洲的东方有一个拥有悠久文明历史的国度，那里有令人垂涎的山珍，也有令人回肠的美味。来自五湖四海的食材和调味品正在无时无刻的触动着亿万人的神经和味蕾。
+                    </p>
+                    <p>
+                    	中国人的传统饮食习俗是以植物性食料为主。主食是五谷，辅食是蔬菜，外加少量肉食。形成这一习俗的主要原因是中原地区以农业生产为主要的经济生产方式。但在不同阶层中，食物的配置
+                        比例不尽相同。因此古代有称在位的皇帝为“肉食者”。
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        <p>版权所有© 中华饮食文化</p>
+      </div>
+    </div>
+</body>
+</html>

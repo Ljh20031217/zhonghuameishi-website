@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"> 
+    <title>中华饮食文化</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+		/* 清除默认列表样式 */  
+		ul {  
+		  list-style-type: none;  
+		  margin: 0;  
+		  padding: 0;  
+		}  
+		
+		/* 隐藏二级和三级菜单 */  
+		.dropdown-content, .dropdown-content ul {  
+		  display: none;  
+		  position: absolute;  
+		  background-color: #f9f9f9;  
+		  min-width: 160px;  
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+		  z-index: 1;  
+		}  
+		
+		/* 三级菜单添加滚动条并限制高度 */
+		.dropdown-content ul {
+		  max-height: 200px; /* 设置三级菜单的最大高度 */
+		  overflow-y: auto; /* 添加垂直滚动条 */
+		}
+		  
+		/* 显示二级菜单 */  
+		.dropdown li:hover .dropdown-content {  
+		  display: block;  
+		}  
+		  
+		/* 显示三级菜单 */  
+		.dropdown-content li:hover ul {  
+		  display: block;  
+		  left: 100%;  
+		  top: 0;  
+		}  
+		  
+		/* 链接样式 */  
+		a {  
+		  color: black;  
+		  padding: 4px 16px;  
+		  text-decoration: none;  
+		  display: block;  
+		}  
+		  
+		/* 链接颜色变化 */  
+		#selectedRegion {  
+		  margin-top: 10px; /* 为了显示清晰，和下拉菜单之间留一些间距 */  
+		  padding: 5px;  
+		 
+		}
+		
+		a:hover {background-color: #f1f1f1;}
+	</style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="top">
+            <img src="images/logo.png" class="logo">
+            <div class="link">
+                <a href="#">设为首页</a> | <a href="#" class="link2">加入收藏</a>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+              <li><a href="index.html">网站首页</a></li>
+              <li><a href="page1.html">食材产地</a></li>
+              <li><a href="page2.html">中华菜系</a></li>
+              <li><a href="page3.html">节日习俗</a></li>
+              <li><a href="page4.html">在线留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+    	
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <div class="pro_box">
+                <img src="images/pro_cp.jpg"/>
+                <ul>
+                  <li><a href="page1.html">食材产地</a></li>
+                  <li><a href="page2.html">中华菜系</a></li>
+                  <li><a href="page3.html">节日习俗</a></li>
+                  <li><a href="page4.html">在线留言</a></li>
+                
+                </ul>
+            
+            </div>
+            <div class="contact_box">
+                <div class="text">
+                  <p>联系人：XXX</p>
+                  <p>电话：000-0000-0000</p>
+                </div>
+            </div>
+        </div>
+        <div class="cont_right">
+			<div class="tupian">
+                <div class="title">
+                  <h3>在线留言</h3>
+                </div>
+                <div class="liuyan">
+					<p><label>性别：</label>男<input type="radio" name="radio" value="男" />女<input type="radio" name="radio" value="女"></p>
+                    
+                  <nav>  
+  <ul class="dropdown">  
+    <li><a href="#">地区</a>  
+      <ul class="dropdown-content hidden">  
+        <li><a href="#" onclick="selectRegion(event, '中国')">中国</a>  
+          <ul class="sub-menu hidden">  
+            <li><a href="#" onclick="selectRegion(event, '中国-北京')">北京</a></li>  
+            <li><a href="#" onclick="selectRegion(event, '中国-天津')">天津</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-河北')">河北</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-河南')">河南</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-山东')">山东</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-山西')">山西</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-内蒙古')">内蒙古</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-辽宁')">辽宁</a></li> 
+            <li><a href="#" onclick="selectRegion(event, '中国-吉林')">吉林</a></li> 
+            <li><a href="#" onclick="selectRegion(event, '中国-北京')">黑龙江</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-陕西')">陕西</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-甘肃')">甘肃</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-青海')">青海</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-宁夏')">宁夏</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-上海')">上海</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-江苏')">江苏</a></li> 
+            <li><a href="#" onclick="selectRegion(event, '中国-浙江')">浙江</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-安徽')">安徽</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-福建')">福建</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-江西')">江西</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-湖北')">湖北</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-湖南')">湖南</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-广东')">广东</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-广西')">广西</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-四川')">四川</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-重庆')">重庆</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-贵州')">贵州</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-云南')">云南</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-海南')">海南</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-新疆')">新疆</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-西藏')">西藏</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-香港')">香港</a></li>
+            <li><a href="#" onclick="selectRegion(event, '中国-澳门')">澳门</a></li>
+             <li><a href="#" onclick="selectRegion(event, '中国-台湾')">台湾</a></li>
+            
+      
+          </ul>  
+        </li>  
+        <li><a href="#" onclick="selectRegion(event, '美国')">美国</a>   
+        </li> 
+        <li><a href="#" onclick="selectRegion(event, '英国')">英国</a> 
+        </li>  
+        <li><a href="#" onclick="selectRegion(event, '俄罗斯')">俄罗斯</a> 
+        </li>  
+        <li><a href="#" onclick="selectRegion(event, '日本')">日本</a> 
+        </li>  
+        <li><a href="#" onclick="selectRegion(event, '法国')">法国</a> 
+        </li>  
+         
+      </ul>  
+    </li>  
+  </ul>  
+  <div id="selectedRegion"></div>
+</nav>  
+
+
+                    <p><label>称呼：</label><input type="text" class="text"></p>
+                    <p><label>电话：</label><input type="text" class="text"></p>
+                    <p><label>邮箱：</label><input type="text" class="text"></p>
+                    <p><label>内容：</label><textarea></textarea></p>
+                    <input type="button" value="留言"  class="btn">
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        <p>版权所有© 中华饮食文化</p>
+      </div>
+    </div>
+    <script>  
+    function selectRegion(event, region) {  
+  // 阻止默认的链接点击行为（因为这里不需要导航到新的页面）  
+  event.preventDefault();  
+  
+  // 更新选中的地区  
+  document.getElementById('selectedRegion').textContent = region;  
+  
+  // 关闭下拉菜单（如果需要）  
+  var dropdownContent = event.target.closest('.dropdown-content');  
+  if (dropdownContent) {  
+    dropdownContent.classList.add('hidden');  
+  }  
+  
+  // 如果有子菜单，也关闭它  
+  var subMenu = event.target.closest('.sub-menu');  
+  if (subMenu) {  
+    subMenu.classList.add('hidden');  
+  }  
+}  
+ 
+// 如果你还想在点击其他地方时关闭下拉菜单，可以添加以下代码（可选）  
+document.addEventListener('click', function(event) {  
+  var dropdownContent = document.querySelector('.dropdown-content:not(.hidden)');  
+  var subMenu = document.querySelector('.sub-menu:not(.hidden)');  
+  if (!dropdownContent.contains(event.target) && !subMenu.contains(event.target)) {  
+    dropdownContent.classList.add('hidden');  
+    subMenu.classList.add('hidden');  
+  }  
+});
+</script>  
+  
+</body>
+</html>

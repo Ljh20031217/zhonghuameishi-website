@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>中华饮食文化</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .carousel-container {
+			position: relative;
+			margin-bottom: 20px;
+			width: 100%;
+			height: 400px;
+			overflow: hidden;
+		}
+		
+		/* 轮播项基础样式 */
+		.carousel-item {
+			position: absolute;
+			background-size: cover;
+			background-position: center;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			transition: all 0.5s ease;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		
+		/* 不同位置的样式 */
+		.carousel-item.center {
+			width: 250px;  /* 最大的中间图片 */
+			height: 375px;
+			z-index: 40;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		.carousel-item.side {
+			width: 200px;  /* 稍小的第2、4张 */
+			height: 310px;
+			z-index: 30;
+		}
+		
+		.carousel-item.edge {
+			width: 180px;  /* 最小的第1、5张 */
+			height: 270px;
+			z-index: 20;
+		}
+
+        /* 样式 */
+        .festivals {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .festival {
+			background-color: #FFE4C4;
+			padding: 15px;
+			border-radius: 10px;
+			margin: 15px 0;
+        }
+
+        .festival img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3; /* 设置图片比例为4:3 */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .festival h4 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+			text-align: center;
+        }
+
+        .festival p {
+            font-size: 16px;
+            color: #666;
+			text-align: left;
+        }
+
+        /* 轮播控制按钮 */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 100;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="top">
+            <img src="images/logo.png" class="logo">
+            <div class="link">
+                <a href="#">设为首页</a> | <a href="#" class="link2">加入收藏</a>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">网站首页</a></li>
+                <li><a href="page1.html">食材产地</a></li>
+                <li><a href="page2.html">中华菜系</a></li>
+                <li><a href="page3.html">节日习俗</a></li>
+                <li><a href="page4.html">在线留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <div class="pro_box">
+                <img src="images/pro_cp.jpg"/>
+                <ul>
+                    <li><a href="page1.html">食材产地</a></li>
+                    <li><a href="page2.html">中华菜系</a></li>
+                    <li><a href="page3.html">节日习俗</a></li>
+                    <li><a href="page4.html">在线留言</a></li>
+                </ul>
+            </div>
+            <div class="contact_box">
+                <div class="text">
+                    <p>联系人：XXX</p>
+                    <p>电话：000-0000-0000</p>
+                </div>
+            </div>
+        </div>
+        <div class="cont_right">
+            <div class="tupian">
+                <div class="title">
+                    <h3>节日习俗</h3>
+                    <p>当前位置：<a href="index.html">首页</a>&gt;&gt;<a href="page3.html">节日习俗</a></p>
+                </div>
+                <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item" style="background-image: url('images/carousel_chuxi.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_chunjie.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_yuanxiao.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_qingming.png')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_duanwu.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_zhongqiu.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_chongyang.jpg')"></div>
+            <div class="carousel-item" style="background-image: url('images/carousel_laba.jpg')"></div>
+        </div>
+        <button class="carousel-button prev-button">❮</button>
+        <button class="carousel-button next-button">❯</button>
+        <div class="carousel-indicators"></div>
+    </div>
+                <div class="festivals">
+                    <div class="festival">
+                        <img src="images/chuxi.png" alt="除夕">
+                        <h4>除夕</h4>
+                        <p>食物：饺子</p>
+                        <p>寓意：除夕夜，也称为大年夜，是农历年的最后一天晚上。家家团聚，一起包饺子、吃饺子，饺子形似元宝，寓意招财进宝。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/chunjie.png" alt="春节">
+                        <h4>春节</h4>
+                        <p>食物：鱼</p>
+                        <p>寓意：春节是农历新年的第一天，是中国最重要的节日。人们在这一天吃鱼，寓意新年年年有余。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/yuanxiao.png" alt="元宵节">
+                        <h4>元宵节</h4>
+                        <p>食物：元宵、汤圆</p>
+                        <p>寓意：元宵节吃元宵和汤圆，它们都是用糯米皮包裹着馅做成的，象征着团圆和美满。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/qingming.png" alt="清明节">
+                        <h4>清明节</h4>
+                        <p>食物：青团</p>
+                        <p>寓意：清明节是祭祖和扫墓的日子，也是踏青的好时节。青团是清明节的传统食品，用艾草汁和糯米粉制成。吃青团是为了纪念祖先，寓意清新和健康。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/duanwu.png" alt="端午节">
+                        <h4>端午节</h4>
+                        <p>食物：粽子</p>
+                        <p>寓意：端午节是为了纪念屈原而设立的节日，主要食品是粽子，用竹叶包裹糯米和各种馅料，寓意是驱邪避疫。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/zhongqiu.png" alt="中秋节">
+                        <h4>中秋节</h4>
+                        <p>食物：月饼</p>
+                        <p>寓意：中秋节是团圆的节日，吃月饼，象征着团圆和美满。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/chongyang.png" alt="重阳节">
+                        <h4>重阳节</h4>
+                        <p>食物：菊花酒</p>
+                        <p>寓意：菊花酒用菊花和酒酿成。重阳节喝菊花酒，登高望远，寓意健康长寿。</p>
+                    </div>
+                    <div class="festival">
+                        <img src="images/laba.png" alt="腊八节">
+                        <h4>腊八节</h4>
+                        <p>食物：腊八粥</p>
+                        <p>寓意：腊八粥由多种谷物和干果熬制而成。腊八节喝腊八粥，寓意丰收和吉祥。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">
+            <p>版权所有© 中华饮食文化</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.querySelector('.prev-button');
+            const nextBtn = document.querySelector('.next-button');
+            const indicatorsContainer = document.querySelector('.carousel-indicators');
+            const totalItems = items.length;
+            let currentIndex = 2; // 初始中间位置
+            let autoPlayInterval;
+            
+            // 创建指示器
+            function createIndicators() {
+                for (let i = 0; i < totalItems; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('indicator');
+                    if (i === currentIndex) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateCarousel();
+                    });
+                    indicatorsContainer.appendChild(indicator);
+                }
+            }
+            
+            function updateCarousel() {
+    // 更新指示器
+    document.querySelectorAll('.indicator').forEach((ind, index) => {
+        ind.classList.toggle('active', index === currentIndex);
+    });
+    
+    // 计算5个可见项的索引
+    const visibleIndices = [
+        (currentIndex - 2 + totalItems) % totalItems,
+        (currentIndex - 1 + totalItems) % totalItems,
+        currentIndex % totalItems,
+        (currentIndex + 1) % totalItems,
+        (currentIndex + 2) % totalItems
+    ];
+    
+    // 设置所有项初始状态
+    items.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.left = '-100%';
+        item.classList.remove('center', 'side', 'edge');
+    });
+    
+    // 设置5个可见项的位置和样式
+    // 第1张（最左侧）
+    items[visibleIndices[0]].classList.add('edge');
+    items[visibleIndices[0]].style.left = '6%';
+    items[visibleIndices[0]].style.opacity = '1';
+    items[visibleIndices[0]].style.zIndex = '20';
+    
+    // 第2张（左侧）
+    items[visibleIndices[1]].classList.add('side');
+    items[visibleIndices[1]].style.left = '18%';
+    items[visibleIndices[1]].style.opacity = '1';
+    items[visibleIndices[1]].style.zIndex = '30';
+    
+    // 第3张（中间）
+    items[visibleIndices[2]].classList.add('center');
+    items[visibleIndices[2]].style.left = '50%';
+    items[visibleIndices[2]].style.opacity = '1';
+    items[visibleIndices[2]].style.zIndex = '40';
+    
+    // 第4张（右侧）
+    items[visibleIndices[3]].classList.add('side');
+    items[visibleIndices[3]].style.left = '55%';
+    items[visibleIndices[3]].style.opacity = '1';
+    items[visibleIndices[3]].style.zIndex = '30';
+    
+    // 第5张（最右侧）
+    items[visibleIndices[4]].classList.add('edge');
+    items[visibleIndices[4]].style.left = '70%';
+    items[visibleIndices[4]].style.opacity = '1';
+    items[visibleIndices[4]].style.zIndex = '20';
+}
+            
+            // 下一张
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateCarousel();
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                updateCarousel();
+            }
+            
+            // 自动播放
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 3000);
+            }
+            
+            // 初始化
+            createIndicators();
+            updateCarousel();
+            startAutoPlay();
+            
+            // 事件监听
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval);
+                nextSlide();
+                startAutoPlay();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval);
+                prevSlide();
+                startAutoPlay();
+            });
+            
+            // 鼠标悬停暂停
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', startAutoPlay);
+        });
+    </script>
+</body>
+</html>

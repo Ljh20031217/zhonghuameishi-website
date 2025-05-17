@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>中华饮食文化</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .map-container {
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+            background: url('images/china_map.png') no-repeat center center;
+            background-size: contain;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+		.map-caption {
+		margin-bottom: 10px;
+		font-size: 20px; /* 增大字体大小 */
+		color: #333;
+		}
+        .region {
+            position: absolute;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        .close {
+            color: #333;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="top">
+            <img src="images/logo.png" class="logo">
+            <div class="link">
+                <a href="#">设为首页</a> | <a href="#" class="link2">加入收藏</a>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+              <li><a href="index.html">网站首页</a></li>
+              <li><a href="page1.html">食材产地</a></li>
+              <li><a href="page2.html">中华菜系</a></li>
+              <li><a href="page3.html">节日习俗</a></li>
+              <li><a href="page4.html">在线留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <div class="pro_box">
+              <img src="images/pro_cp.jpg"/>
+                <ul>
+                  <li><a href="page1.html">食材产地</a></li>
+                  <li><a href="page2.html">中华菜系</a></li>
+                  <li><a href="page3.html">节日习俗</a></li>
+                  <li><a href="page4.html">在线留言</a></li>
+                </ul>
+            </div>
+            <div class="contact_box">
+                <div class="text">
+                  <p>联系人：XXX</p>
+                  <p>电话：000-0000-0000</p>
+                </div>
+            </div>
+        </div>
+        <div class="cont_right">
+          <div class="jieshao">
+                <div class="title">
+                  <h3>食材产地</h3>
+                  <p>当前位置：<a href="index.html">首页</a>&gt;&gt;<a href="page1.html">食材产地</a></p>
+                </div>
+                <div class="map-caption">点击省份名称，即可知该省份的食材特产！</div>
+                <div class="map-container">
+                  <!-- 省份区域示例，需要根据实际地图调整 -->
+                  	<div class="region" id="heilongjiang" data-name="黑龙江" data-ingredients="黑木耳,大米,红肠" style="top: 33px; left: 441px; width: 70px; height: 50px;"></div>
+                  	<div class="region" id="jilin" data-name="吉林" data-ingredients="人参，鹿茸，玉米" style="top: 81px; left: 437px; width: 67px; height: 49px;"></div>
+                  <div class="region" id="liaoning" data-name="辽宁" data-ingredients="海参，大米，榛蘑" style="top: 131px; left: 402px; width: 80px; height: 41px;"></div>
+            		<div class="region" id="neimenggu" data-name="内蒙古" data-ingredients="羊肉，奶制品" style="top: 113px; left: 257px; width: 153px; height: 31px;"></div>
+        			<div class="region" id="shanxi" data-name="山西" data-ingredients="老陈醋，黄米" style="top: 167px; left: 337px; width: 29px; height: 47px;"></div>
+        			<div class="region" id="hebei" data-name="河北" data-ingredients="杏仁，香菇，驴肉" style="top: 162px; left: 365px; width: 22px; height: 38px;"></div>
+        			<div class="region" id="shandong" data-name="山东" data-ingredients="大葱，扒鸡，阿胶" style="top: 186px; left: 388px; width: 47px; height: 29px;"></div>
+        			<div class="region" id="henan" data-name="河南" data-ingredients="槐花，皂角，毛尖" style="top: 208px; left: 340px; width: 38px; height: 32px;"></div>
+        			<div class="region" id="jiangsu" data-name="江苏" data-ingredients="大闸蟹，水蜜桃，碧螺春" style="top: 215px; left: 408px; width: 27px; height: 34px;"></div>
+        			<div class="region" id="zhejiang" data-name="浙江" data-ingredients="金华火腿，黄酒，龙井茶," style="top: 253px; left: 406px; width: 25px; height: 32px;"></div>
+        			<div class="region" id="anhui" data-name="安徽" data-ingredients="酥梨，石榴，黄山毛峰" style="top: 222px; left: 378px; width: 28px; height: 42px;"></div>
+        			<div class="region" id="fujian" data-name="福建" data-ingredients="琯溪蜜柚，龙眼，铁观音，武夷岩茶" style="top: 288px; left: 394px; width: 26px; height: 40px;"></div>
+        			<div class="region" id="jiangxi" data-name="江西" data-ingredients="赣南脐橙，蜜桔，鄱阳湖银鱼" style="top: 270px; left: 367px; width: 27px; height: 47px;"></div>
+        			<div class="region" id="hubei" data-name="湖北" data-ingredients="武昌鱼，莲藕，热干面" style="top: 243px; left: 330px; width: 47px; height: 26px;"></div>
+        			<div class="region" id="hunan" data-name="湖南" data-ingredients="辣椒，腊肉，冰糖橙" style="top: 273px; left: 329px; width: 32px; height: 41px;"></div>
+        			<div class="region" id="guangdong" data-name="广东" data-ingredients="牛肉丸，陈皮，荔枝" style="top: 321px; left: 348px; width: 48px; height: 27px;"></div>
+        			<div class="region" id="guangxi" data-name="广西" data-ingredients="罗汉果，荔浦芋头，桂林米粉" style="top: 319px; left: 298px; width: 45px; height: 34px;"></div>
+                    <div class="region" id="hainan" data-name="海南" data-ingredients="椰子，芒果，咖啡豆" style="top: 372px; left: 318px; width: 26px; height: 19px;"></div>
+                    <div class="region" id="sichuan" data-name="四川" data-ingredients="辣椒，豆瓣，花椒" style="top: 236px; left: 236px; width: 57px; height: 56px;"></div>
+                    <div class="region" id="guizhou" data-name="贵州" data-ingredients="折耳根，辣椒，竹笋" style="top: 293px; left: 282px; width: 42px; height: 25px;"></div>
+                    <div class="region" id="yunnan" data-name="云南" data-ingredients="野生菌，虫草，普洱茶" style="top: 296px; left: 233px; width: 44px; height: 52px;"></div>
+                    <div class="region" id="xizang" data-name="西藏" data-ingredients="牦牛肉，青稞，林芝松茸" style="top: 212px; left: 78px; width: 150px; height: 67px;"></div>
+                    <div class="region" id="shaanxi" data-name="陕西" data-ingredients="红枣，核桃，苹果" style="top: 179px; left: 302px; width: 31px; height: 62px;"></div>
+                    <div class="region" id="gansu" data-name="甘肃" data-ingredients="苹果，百合，白酒" style="top: 137px; left: 254px; width: 38px; height: 97px;"></div>
+                    <div class="region" id="qinghai" data-name="青海" data-ingredients="青稞，牦牛肉，沙果" style="top: 162px; left: 158px; width: 102px; height: 58px;"></div>
+                    <div class="region" id="ningxia" data-name="宁夏" data-ingredients="枸杞，马铃薯，甘草" style="top: 168px; left: 294px; width: 29px; height: 28px;"></div>
+                    <div class="region" id="xinjiang" data-name="新疆" data-ingredients="葡萄，哈密瓜，核桃，和田玉枣" style="top: 84px; left: 55px; width: 121px; height: 102px;"></div>
+                    <div class="region" id="beijing" data-name="北京" data-ingredients="烤鸭，白梨，酱菜" style="top: 149px; left: 374px; width: 17px; height: 18px;"></div>
+                    <div class="region" id="tianjin" data-name="天津" data-ingredients="板栗，稻米，麻花" style="top: 164px; left: 387px; width: 10px; height: 19px;"></div>
+                    <div class="region" id="shanghai" data-name="上海" data-ingredients="小笼包，梨膏糖" style="top: 245px; left: 430px; width: 17px; height: 16px;"></div>
+                    <div class="region" id="chongqing" data-name="重庆" data-ingredients="豆瓣，涪陵榨菜" style="top: 257px; left: 299px; width: 21px; height: 25px;"></div>
+                    <div class="region" id="aomen" data-name="澳门" data-ingredients="水产品，葡式蛋挞" style="top: 348px; left: 361px; width: 9px; height: 9px;"></div>
+                    <div class="region" id="xianggang" data-name="香港" data-ingredients="饼干，酥皮饼食" style="top: 346px; left: 371px; width: 8px; height: 9px;"></div>
+                    <div class="region" id="taiwan" data-name="台湾" data-ingredients="甘蔗，稻米，茶叶，香茅" style="top: 310px; left: 430px; width: 18px; height: 38px;"></div>
+    </div>
+    <div class="footer">
+      <div class="copyright">
+        <p>版权所有© 中华饮食文化</p>
+      </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-ingredients"></p>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const regions = document.querySelectorAll('.region');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalIngredients = document.getElementById('modal-ingredients');
+        const closeBtn = document.querySelector('.close');
+
+        Array.from(regions).forEach(region => {
+            region.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const ingredients = this.getAttribute('data-ingredients');
+
+                modalTitle.textContent = name;
+                modalIngredients.textContent = ingredients; // 显示在一行
+
+                modal.style.display = 'block'; // 显示模态框
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
